@@ -19,9 +19,9 @@ html {
   overflow: hidden;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   html {
-    font-size: calc(100vw / 404 * 10);
+    font-size: calc(100vw / 768 * 10);
     overflow: hidden;
   }
   body {
@@ -68,7 +68,7 @@ canvas {
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   .hero-text-left {
     top: 14.6rem;
     left: 50%;
