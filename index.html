@@ -149,7 +149,9 @@
         ];
         shuffle(classes);
 
+        let index = 0;
         button.onclick = async () => {
+          index++;
           const tl1 = gsap
             .timeline({ paused: true })
             .to(".twelve", {
@@ -177,16 +179,46 @@
           const tl2 = gsap
             .timeline({ paused: true })
             .to(
-              ".one, .two, .three, .four, .five, .six, .seven, .eight, .nine, .ten, .eleven",
+              // "one.two,.three,.four,.five,.six,.seven,.eight,.nine,.ten,.eleven",
+              [
+                document.querySelector(".one"),
+                document.querySelector(".two"),
+                document.querySelector(".three"),
+                document.querySelector(".four"),
+                document.querySelector(".five"),
+                document.querySelector(".six"),
+                document.querySelector(".seven"),
+                document.querySelector(".eight"),
+                document.querySelector(".nine"),
+                document.querySelector(".ten"),
+                document.querySelector(".eleven"),
+              ],
+
               {
-                scale: 0.9,
+                scale: 0.75,
+                xPercent: 10,
+                rotateY: -180,
               },
             )
             .to(
-              ".one, .two, .three, .four, .five, .six, .seven, .eight, .nine, .ten, .eleven",
+              // "one,.two,.three,.four,.five,.six,.seven,.eight,.nine,.ten,.eleven",
+              [
+                document.querySelector(".one"),
+                document.querySelector(".two"),
+                document.querySelector(".three"),
+                document.querySelector(".four"),
+                document.querySelector(".five"),
+                document.querySelector(".six"),
+                document.querySelector(".seven"),
+                document.querySelector(".eight"),
+                document.querySelector(".nine"),
+                document.querySelector(".ten"),
+                document.querySelector(".eleven"),
+              ],
               {
                 scale: 1,
-                rotateY: 180,
+                xPercent: 0,
+                rotateY: 0,
                 ease: "none",
                 duration: 0.85,
                 stagger: { amount: 0.65 },
@@ -203,21 +235,27 @@
               { progress: 0 },
               { progress: 1, ease: "power1.inOut", duration: 1 },
             );
-          tl1.kill();
-          tl2.kill();
-          tl1.invalidate();
-          tl2.invalidate();
-          tl1.revert();
-          tl2.revert();
-          gsap.utils.toArray(".hero-cards figure").forEach((el, i) => {
-            // console.log(
-            //   el.className,
-            //   oldClasses,
-            //   oldClasses.indexOf("two"),
-            //   oldClasses.indexOf[el.className],
-            //   oldClasses[oldClasses.indexOf[el.className] + 1] || oldClasses[0],
-            // );
-            el.className = oldClasses[i + 1] || oldClasses[0];
+          const els = [
+            document.querySelector(".one"),
+            document.querySelector(".two"),
+            document.querySelector(".three"),
+            document.querySelector(".four"),
+            document.querySelector(".five"),
+            document.querySelector(".six"),
+            document.querySelector(".seven"),
+            document.querySelector(".eight"),
+            document.querySelector(".nine"),
+            document.querySelector(".ten"),
+            document.querySelector(".eleven"),
+            document.querySelector(".twelve"),
+          ];
+          els.forEach((el, i) => {
+            el.className = els[i + 1]?.className || "one";
+            // el.style.removeProperty("transform");
+            // el.style.removeProperty("translate");
+            // el.style.removeProperty("rotate");
+            // el.style.removeProperty("scale");
+            el.style.removeProperty("z-index");
           });
         };
       });
