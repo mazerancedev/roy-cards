@@ -1,0 +1,19 @@
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  padding: 5.6rem 4rem;
+}
+
+.nav-logo {
+  width: 28.343rem;
+  height: 4.8rem;
+}
+
+.nav-project {
+  width: 13.105rem;
+  height: 8rem;
+}
