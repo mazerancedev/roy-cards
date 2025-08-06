@@ -19,7 +19,6 @@ html {
   overflow: hidden;
 }
 
-
 @media (min-width: 768px) {
   html {
     font-size: calc(100vmin / 768 * 10);
@@ -229,4 +228,11 @@ canvas {
   border: 0.1rem solid #fff;
   cursor: pointer;
   margin: 3.4rem auto 0;
+}
+
+@media (max-width: 400px) {
+  .hero button {
+    transform: scale(1.5);
+    transform-origin: 50% -50%;
+  }
 }
