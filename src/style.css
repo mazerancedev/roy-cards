@@ -19,6 +19,18 @@ html {
   overflow: hidden;
 }
 
+
+@media (min-width: 768px) {
+  html {
+    font-size: calc(100vmin / 768 * 10);
+    overflow: hidden;
+  }
+  body {
+    overflow: hidden;
+    width: 100vw;
+  }
+}
+
 @media (max-width: 768px) {
   html {
     font-size: calc(100vw / 768 * 10);
