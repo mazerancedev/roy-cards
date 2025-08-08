@@ -233,6 +233,6 @@ canvas {
 @media (max-width: 400px) {
   .hero button {
     transform: scale(1.5);
-    transform-origin: 50% -50%;
+    transform-origin: 50% -200%;
   }
 }
